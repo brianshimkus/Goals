@@ -10,7 +10,7 @@ function App() {
 	return (
 		<>
 			<Router>
-				<div>
+				<div className='bg-gray-900 min-h-screen'>
 					<Header />
 					<Routes>
 						<Route path='/' element={<Dashboard />} />

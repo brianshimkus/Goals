@@ -11,36 +11,51 @@ export default function Header() {
 	const onLogout = () => {
 		dispatch(logout())
 		dispatch(reset())
-		navigate('/')
+		navigate('/login')
 	}
 
 	return (
-		<header>
-			<div>
-				<Link to='/'>GoalSetter</Link>
+		<header className='bg-gray-800 shadow-md text-gray-400 py-2'>
+			<div className='container mx-auto flex'>
+				<div className='flex items-center justify-between w-full px-4 py-1'>
+					<Link
+						to='/dashboard'
+						className='font-semibold tracking-widest uppercase text-3xl text-green-400 hover:text-green-300 transition ease-in-out duration-300'>
+						Goals
+					</Link>
+					<ul>
+						{user ? (
+							<li className='bg-gray-700 px-4 py-1 rounded-md text-xl hover:text-gray-100 transition ease-in-out duration-300 hover:bg-gray-600 hover:cursor-pointer'>
+								<button onClick={onLogout}>
+									<div className='flex uppercase tracking-wide'>
+										<FaSignOutAlt className='mr-2 h-4 mt-1.5' />{' '}
+										<span className='text-sm font-bold mt-1'>Log Out</span>
+									</div>
+								</button>
+							</li>
+						) : (
+							<div className='flex'>
+								<li className='bg-gray-700 px-4 py-1 rounded-md text-xl hover:text-gray-100 transition ease-in-out duration-300 hover:bg-gray-600 hover:cursor-pointer'>
+									<div className='flex uppercase tracking-wider'>
+										<Link to='/login' className='flex'>
+											<FaSignInAlt className='mr-2 h-4 mt-1.5' />{' '}
+											<span className='text-sm font-bold mt-1'>Log In</span>
+										</Link>
+									</div>
+								</li>
+								<li className='bg-green-400 px-4 py-2 rounded-md text-xl text-green-900 hover:text-green-800 transition ease-in-out duration-300 hover:bg-green-300 hover:cursor-pointer ml-4'>
+									<div className='flex uppercase tracking-wider'>
+										<Link to='/register' className='flex'>
+											<FaUser className='mr-1 h-3 mt-1' />{' '}
+											<span className='text-sm font-bold'>Register</span>
+										</Link>
+									</div>
+								</li>
+							</div>
+						)}
+					</ul>
+				</div>
 			</div>
-			<ul>
-				{user ? (
-					<li>
-						<button onClick={onLogout}>
-							<FaSignOutAlt /> Logout
-						</button>
-					</li>
-				) : (
-					<>
-						<li>
-							<Link to='/login'>
-								<FaSignInAlt /> Login
-							</Link>
-						</li>
-						<li>
-							<Link to='/register'>
-								<FaUser /> Register
-							</Link>
-						</li>
-					</>
-				)}
-			</ul>
 		</header>
 	)
 }

@@ -64,20 +64,19 @@ export default function Register() {
 
 	return (
 		<>
-			<section className='heading'>
+			<section>
 				<h1>
 					<FaUser /> Register
 				</h1>
 				<p>Please create an account</p>
 			</section>
 
-			<section className='form'>
+			<section>
 				<form onSubmit={onSubmit}>
-					<div className='form-group'>
+					<div>
 						<label htmlFor='name'>Name</label>
 						<input
 							type='text'
-							className='form-control'
 							id='name'
 							name='name'
 							value={name}
@@ -86,11 +85,10 @@ export default function Register() {
 						/>
 					</div>
 
-					<div className='form-group'>
+					<div>
 						<label htmlFor='email'>Email</label>
 						<input
 							type='email'
-							className='form-control'
 							id='email'
 							name='email'
 							value={email}
@@ -99,11 +97,10 @@ export default function Register() {
 						/>
 					</div>
 
-					<div className='form-group'>
+					<div>
 						<label htmlFor='password'>Password</label>
 						<input
 							type='password'
-							className='form-control'
 							id='password'
 							name='password'
 							value={password}
@@ -112,11 +109,10 @@ export default function Register() {
 						/>
 					</div>
 
-					<div className='form-group'>
+					<div>
 						<label htmlFor='password2'>Confirm Password</label>
 						<input
 							type='password'
-							className='form-control'
 							id='password2'
 							name='password2'
 							value={password2}
@@ -125,10 +121,8 @@ export default function Register() {
 						/>
 					</div>
 
-					<div className='form-group'>
-						<button type='submit' className='btn btn-block'>
-							Register
-						</button>
+					<div>
+						<button type='submit'>Register</button>
 					</div>
 				</form>
 			</section>

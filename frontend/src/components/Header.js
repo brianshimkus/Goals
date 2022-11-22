@@ -15,14 +15,14 @@ export default function Header() {
 	}
 
 	return (
-		<header className='header'>
-			<div className='logo'>
+		<header>
+			<div>
 				<Link to='/'>GoalSetter</Link>
 			</div>
 			<ul>
 				{user ? (
 					<li>
-						<button className='btn' onClick={onLogout}>
+						<button onClick={onLogout}>
 							<FaSignOutAlt /> Logout
 						</button>
 					</li>

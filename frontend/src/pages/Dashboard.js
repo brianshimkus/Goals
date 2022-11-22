@@ -37,16 +37,16 @@ export default function Dashboard() {
 
 	return (
 		<>
-			<section className='heading'>
+			<section>
 				<h1>Welcome {user && user.name}</h1>
 				<p>Goals Dashboard</p>
 			</section>
 
 			<GoalForm />
 
-			<section className='content'>
+			<section>
 				{goals.length > 0 ? (
-					<div className='goals'>
+					<div>
 						{goals.map((goal) => (
 							<GoalItem key={goal._id} goal={goal} />
 						))}

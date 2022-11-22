@@ -57,19 +57,18 @@ export default function Login() {
 
 	return (
 		<>
-			<section className='heading'>
+			<section>
 				<h1>
 					<FaSignInAlt /> Login
 				</h1>
 				<p>Login and start setting goals</p>
 			</section>
 
-			<section className='form'>
+			<section>
 				<form onSubmit={onSubmit}>
-					<div className='form-group'>
+					<div>
 						<input
 							type='email'
-							className='form-control'
 							id='email'
 							name='email'
 							value={email}
@@ -77,10 +76,9 @@ export default function Login() {
 							onChange={onChange}
 						/>
 					</div>
-					<div className='form-group'>
+					<div>
 						<input
 							type='password'
-							className='form-control'
 							id='password'
 							name='password'
 							value={password}
@@ -89,10 +87,8 @@ export default function Login() {
 						/>
 					</div>
 
-					<div className='form-group'>
-						<button type='submit' className='btn btn-block'>
-							Submit
-						</button>
+					<div>
+						<button type='submit'>Submit</button>
 					</div>
 				</form>
 			</section>

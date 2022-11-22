@@ -15,9 +15,9 @@ export default function GoalForm() {
 	}
 
 	return (
-		<section className='form'>
+		<section>
 			<form onSubmit={onSubmit}>
-				<div className='form-group'>
+				<div>
 					<label htmlFor='text'>Goal</label>
 					<input
 						type='text'
@@ -27,10 +27,8 @@ export default function GoalForm() {
 						onChange={(e) => setText(e.target.value)}
 					/>
 				</div>
-				<div className='form-group'>
-					<button className='btn btn-block' type='submit'>
-						Add Goal
-					</button>
+				<div>
+					<button type='submit'>Add Goal</button>
 				</div>
 			</form>
 		</section>

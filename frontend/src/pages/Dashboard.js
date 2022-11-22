@@ -38,7 +38,6 @@ export default function Dashboard() {
 	return (
 		<>
 			<section>
-				<h1>Welcome {user && user.name}</h1>
 				<p>Goals Dashboard</p>
 			</section>
 

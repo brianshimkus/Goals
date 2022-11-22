@@ -20,19 +20,21 @@ export default function Header() {
 				<div className='flex items-center justify-between w-full px-4 py-1'>
 					<Link
 						to='/dashboard'
-						className='font-semibold tracking-widest uppercase text-3xl text-green-400 hover:text-green-300 transition ease-in-out duration-300'>
-						Goals
+						className='font-semibold tracking-widest uppercase text-2xl text-green-400 hover:text-green-300 transition ease-in-out duration-300'>
+						{user ? <>{user && user.name}'s Goals</> : 'Goals'}
 					</Link>
 					<ul>
 						{user ? (
-							<li className='bg-gray-700 px-4 py-1 rounded-md text-xl hover:text-gray-100 transition ease-in-out duration-300 hover:bg-gray-600 hover:cursor-pointer'>
-								<button onClick={onLogout}>
-									<div className='flex uppercase tracking-wide'>
-										<FaSignOutAlt className='mr-2 h-4 mt-1.5' />{' '}
-										<span className='text-sm font-bold mt-1'>Log Out</span>
-									</div>
-								</button>
-							</li>
+							<div className='flex'>
+								<li className='bg-gray-700 px-4 py-1 rounded-md text-xl hover:text-gray-100 transition ease-in-out duration-300 hover:bg-gray-600 hover:cursor-pointer'>
+									<button onClick={onLogout}>
+										<div className='flex uppercase tracking-wide'>
+											<FaSignOutAlt className='mr-2 h-4 mt-1.5' />{' '}
+											<span className='text-sm font-bold mt-1'>Log Out</span>
+										</div>
+									</button>
+								</li>
+							</div>
 						) : (
 							<div className='flex'>
 								<li className='bg-gray-700 px-4 py-1 rounded-md text-xl hover:text-gray-100 transition ease-in-out duration-300 hover:bg-gray-600 hover:cursor-pointer'>
